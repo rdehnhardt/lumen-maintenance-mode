@@ -45,12 +45,28 @@ class UpCommand extends Command
     public function fire()
     {
         if ($this->maintenance->isDownMode()) {
-            $this->maintenance->setUpMode();
-
-            $this->info('Application is now live.');
+            $this->setUpMode();
         } else {
             $this->info('The application was already alive.');
         }
     }
 
+    /**
+     * Set Application Up Mode.
+     *
+     * @return void
+     */
+    public function setUpMode()
+    {
+        if ($this->maintenance->setUpMode()) {
+            $this->info('Application is now live.');
+        } else {
+            $this->error(
+                sprintf(
+                    "Something went wrong on trying to remove maintenance file %s.",
+                    $this->maintenance->maintenanceFilePath()
+                )
+            );
+        }
+    }
 }

@@ -45,11 +45,28 @@ class DownCommand extends Command
     public function fire()
     {
         if ($this->maintenance->isUpMode()) {
-            $this->maintenance->setDownMode();
-
-            $this->info('Application is now in maintenance mode.');
+            $this->setDownMode();
         } else {
             $this->info('The application is already in maintenance mode!');
+        }
+    }
+
+    /**
+     * Set Application Down Mode.
+     *
+     * @return void
+     */
+    public function setDownMode()
+    {
+        if ($this->maintenance->setDownMode()) {
+            $this->info('Application is now in maintenance mode.');
+        } else {
+            $this->error(
+                sprintf(
+                    "Something went wrong on trying to create maintenance file %s.",
+                    $this->maintenance->maintenanceFilePath()
+                )
+            );
         }
     }
 }
