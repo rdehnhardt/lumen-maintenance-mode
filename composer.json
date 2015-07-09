@@ -2,6 +2,7 @@
   "name": "rdehnhardt/lumen-maintenance-mode",
   "type": "library",
   "description": "Define application maintenance mode.",
+  "keywords": ["lumen", "maintenance", "mode"],
   "authors": [
     {
       "name": "Renato Dehnhardt",
