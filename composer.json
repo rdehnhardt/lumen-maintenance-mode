@@ -3,6 +3,7 @@
   "type": "library",
   "description": "Define application maintenance mode.",
   "keywords": ["lumen", "maintenance", "mode"],
+  "license": "MIT",
   "authors": [
     {
       "name": "Renato Dehnhardt",
