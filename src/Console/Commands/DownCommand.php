@@ -1,6 +1,7 @@
 <?php namespace Rdehnhardt\MaintenanceMode\Console\Commands;
 
 use Illuminate\Console\Command;
+use Rdehnhardt\MaintenanceMode\MaintenanceModeService;
 
 class DownCommand extends Command
 {
@@ -20,19 +21,35 @@ class DownCommand extends Command
     protected $description = "Put the application into maintenance mode.";
 
     /**
+     * Maintenance Service.
+     *
+     * @var MaintenanceModeService
+     */
+    protected $maintenance;
+
+    /**
+     * @param \Rdehnhardt\MaintenanceMode\MaintenanceModeService $maintenance
+     */
+    public function __construct(MaintenanceModeService $maintenance)
+    {
+        parent::__construct();
+
+        $this->maintenance = $maintenance;
+    }
+
+    /**
      * Execute the console command.
      *
      * @return void
      */
     public function fire()
     {
-        if (!file_exists(storage_path('framework/down'))) {
-            touch(storage_path('framework/down'));
+        if ($this->maintenance->isUpMode()) {
+            $this->maintenance->setDownMode();
 
             $this->info('Application is now in maintenance mode.');
         } else {
             $this->info('The application is already in maintenance mode!');
         }
     }
-
 }
