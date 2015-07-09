@@ -10,5 +10,7 @@ composer require rdehnhardt/lumen-maintenance-mode
 In bootstrap/app.php, add this instruction in providers
 
 ```
-$app->register(Rdehnhardt\MaintenanceMode\Providers\MaintenanceModeServiceProvider::class);
+$app->register(
+    Rdehnhardt\MaintenanceMode\Providers\MaintenanceModeServiceProvider::class
+);
 ```
