@@ -1,0 +1,23 @@
+{
+  "name": "rdehnhardt/lumen-maintenance-mode",
+  "type": "library",
+  "description": "Define application maintenance mode.",
+  "authors": [
+    {
+      "name": "Renato Dehnhardt",
+      "email": "renatotkd@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0",
+    "phpspec/phpspec": "~2.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Rdehnhardt\\MaintenanceMode\\": "src"
+    }
+  }
+}
