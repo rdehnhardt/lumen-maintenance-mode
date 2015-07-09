@@ -8,18 +8,26 @@
     {
       "name": "Renato Dehnhardt",
       "email": "renatotkd@gmail.com"
+    },
+    {
+      "name": "Vagner do Carmo",
+      "email": "vluzrmos@gmail.com"
     }
   ],
   "require": {
-    "php": ">=5.5.0"
+    "php": ">=5.5.9",
+    "laravel/lumen-framework": "~5.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "~4.0",
-    "phpspec/phpspec": "~2.1"
+    "phpunit/phpunit": "~4.0"
   },
   "autoload": {
     "psr-4": {
       "Rdehnhardt\\MaintenanceMode\\": "src"
     }
-  }
+  },
+  "config":{
+    "preferred-install": "dist"
+  },
+  "minimum-stability": "dev"
 }
