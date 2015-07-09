@@ -26,7 +26,7 @@ class UpCommand extends Command
      */
     public function fire()
     {
-        if (storage_path('framework/down')) {
+        if (file_exists(storage_path('framework/down'))) {
             unlink(storage_path('framework/down'));
             $this->info('Application is now live.');
         } else {
