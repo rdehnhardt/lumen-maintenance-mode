@@ -15,6 +15,12 @@ $app->register(
 );
 ```
 
+##Set View
+
+```
+resources/errors/503.blade.php
+```
+
 ##Put the application into maintenance mode.
 
 ```
@@ -25,10 +31,4 @@ php artisan down
 
 ```
 php artisan up
-```
-
-##Set View
-
-```
-resources/errors/503.blade.php
 ```
