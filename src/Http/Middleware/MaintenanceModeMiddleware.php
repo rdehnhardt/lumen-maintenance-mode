@@ -16,7 +16,11 @@ class MaintenanceModeMiddleware
     public function handle($request, Closure $next)
     {
         if (file_exists(storage_path('framework/down'))) {
-            return response(view('errors.503'), 503);
+            if (view()->exists('errors.503')) {
+                return response(view('errors.503'), 503);
+            } else {
+                return app()->abort(503);
+            }
         }
 
         return $next($request);
