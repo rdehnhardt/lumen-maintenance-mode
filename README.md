@@ -26,3 +26,9 @@ php artisan down
 ```
 php artisan up
 ```
+
+##Set View
+
+```
+resources/errors/503.blade.php
+```
