@@ -1,6 +1,10 @@
 # Lumen maintenance mode
 
-[![Latest Stable Version](https://poser.pugx.org/rdehnhardt/lumen-maintenance-mode/v/stable)](https://packagist.org/packages/rdehnhardt/lumen-maintenance-mode) [![Total Downloads](https://poser.pugx.org/rdehnhardt/lumen-maintenance-mode/downloads)](https://packagist.org/packages/rdehnhardt/lumen-maintenance-mode) [![Latest Unstable Version](https://poser.pugx.org/rdehnhardt/lumen-maintenance-mode/v/unstable)](https://packagist.org/packages/rdehnhardt/lumen-maintenance-mode) [![License](https://poser.pugx.org/rdehnhardt/lumen-maintenance-mode/license)](https://packagist.org/packages/rdehnhardt/lumen-maintenance-mode) [![Build Status](https://travis-ci.org/rdehnhardt/lumen-maintenance-mode.svg)](https://travis-ci.org/rdehnhardt/lumen-maintenance-mode) [![StyleCI](https://styleci.io/repos/38821310/shield)](https://styleci.io/repos/38821310)
+[![Latest Stable Version](https://poser.pugx.org/rdehnhardt/lumen-maintenance-mode/v/stable)](https://packagist.org/packages/rdehnhardt/lumen-maintenance-mode)
+[![Total Downloads](https://poser.pugx.org/rdehnhardt/lumen-maintenance-mode/downloads)](https://packagist.org/packages/rdehnhardt/lumen-maintenance-mode)
+[![License](https://poser.pugx.org/rdehnhardt/lumen-maintenance-mode/license)](https://packagist.org/packages/rdehnhardt/lumen-maintenance-mode)
+[![Build Status](https://travis-ci.org/rdehnhardt/lumen-maintenance-mode.svg)](https://travis-ci.org/rdehnhardt/lumen-maintenance-mode)
+[![StyleCI](https://styleci.io/repos/38821310/shield)](https://styleci.io/repos/38821310)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/rdehnhardt/lumen-maintenance-mode/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/rdehnhardt/lumen-maintenance-mode/?branch=master)
 
 ## How to install
