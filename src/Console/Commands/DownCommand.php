@@ -58,15 +58,7 @@ class DownCommand extends Command
      */
     public function setDownMode()
     {
-        if ($this->maintenance->setDownMode()) {
-            $this->info('Application is now in maintenance mode.');
-        } else {
-            $this->error(
-                sprintf(
-                    "Something went wrong on trying to create maintenance file %s.",
-                    $this->maintenance->maintenanceFilePath()
-                )
-            );
-        }
+        $this->maintenance->setDownMode();
+        $this->info('Application is now in maintenance mode.');
     }
 }

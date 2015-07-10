@@ -58,15 +58,7 @@ class UpCommand extends Command
      */
     public function setUpMode()
     {
-        if ($this->maintenance->setUpMode()) {
-            $this->info('Application is now live.');
-        } else {
-            $this->error(
-                sprintf(
-                    "Something went wrong on trying to remove maintenance file %s.",
-                    $this->maintenance->maintenanceFilePath()
-                )
-            );
-        }
+        $this->maintenance->setUpMode();
+        $this->info('Application is now live.');
     }
 }
