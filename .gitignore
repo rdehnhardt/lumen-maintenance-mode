@@ -1,4 +1,4 @@
-/bootstrap/compiled.php
+/tests/stubs/storage/framework/down
 /vendor
 lumen.log
 .php_cs.cache

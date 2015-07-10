@@ -2,40 +2,20 @@
 
 namespace Rdehnhardt\MaintenanceMode\Console\Commands;
 
-use Illuminate\Console\Command;
-use Rdehnhardt\MaintenanceMode\MaintenanceModeService;
-
 class DownCommand extends Command
 {
     /**
-     * @var string
+     * @inheritdoc
      */
     protected $name = 'down';
 
     /**
-     * @var string
+     * @inheritdoc
      */
     protected $description = 'Put the application into maintenance mode.';
 
     /**
-     * @var MaintenanceModeService
-     */
-    protected $maintenance;
-
-    /**
-     * @param \Rdehnhardt\MaintenanceMode\MaintenanceModeService $maintenance
-     */
-    public function __construct(MaintenanceModeService $maintenance)
-    {
-        parent::__construct();
-
-        $this->maintenance = $maintenance;
-    }
-
-    /**
-     * Execute the console command.
-     *
-     * @return void
+     * @inheritdoc
      */
     public function fire()
     {
@@ -44,16 +24,5 @@ class DownCommand extends Command
         } else {
             $this->info('The application is already in maintenance mode!');
         }
-    }
-
-    /**
-     * Set Application Down Mode.
-     *
-     * @return void
-     */
-    public function setDownMode()
-    {
-        $this->maintenance->setDownMode();
-        $this->info('Application is now in maintenance mode.');
     }
 }

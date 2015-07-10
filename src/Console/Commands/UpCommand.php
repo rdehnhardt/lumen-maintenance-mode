@@ -2,40 +2,20 @@
 
 namespace Rdehnhardt\MaintenanceMode\Console\Commands;
 
-use Illuminate\Console\Command;
-use Rdehnhardt\MaintenanceMode\MaintenanceModeService;
-
 class UpCommand extends Command
 {
     /**
-     * @var string
+     * @inheritdoc
      */
     protected $name = 'up';
 
     /**
-     * @var string
+     * @inheritdoc
      */
     protected $description = 'Bring the application out of maintenance mode.';
 
     /**
-     * @var MaintenanceModeService
-     */
-    protected $maintenance;
-
-    /**
-     * @param \Rdehnhardt\MaintenanceMode\MaintenanceModeService $maintenance
-     */
-    public function __construct(MaintenanceModeService $maintenance)
-    {
-        parent::__construct();
-
-        $this->maintenance = $maintenance;
-    }
-
-    /**
-     * Execute the console command.
-     *
-     * @return void
+     * @inheritdoc
      */
     public function fire()
     {
@@ -44,16 +24,5 @@ class UpCommand extends Command
         } else {
             $this->info('The application was already alive.');
         }
-    }
-
-    /**
-     * Set Application Up Mode.
-     *
-     * @return void
-     */
-    public function setUpMode()
-    {
-        $this->maintenance->setUpMode();
-        $this->info('Application is now live.');
     }
 }
