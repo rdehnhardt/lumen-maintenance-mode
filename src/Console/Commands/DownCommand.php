@@ -8,22 +8,16 @@ use Rdehnhardt\MaintenanceMode\MaintenanceModeService;
 class DownCommand extends Command
 {
     /**
-     * The console command name.
-     *
      * @var string
      */
     protected $name = 'down';
 
     /**
-     * The console command description.
-     *
      * @var string
      */
     protected $description = 'Put the application into maintenance mode.';
 
     /**
-     * Maintenance Service.
-     *
      * @var MaintenanceModeService
      */
     protected $maintenance;

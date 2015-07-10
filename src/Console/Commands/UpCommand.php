@@ -8,22 +8,16 @@ use Rdehnhardt\MaintenanceMode\MaintenanceModeService;
 class UpCommand extends Command
 {
     /**
-     * The console command name.
-     *
      * @var string
      */
     protected $name = 'up';
 
     /**
-     * The console command description.
-     *
      * @var string
      */
     protected $description = 'Bring the application out of maintenance mode.';
 
     /**
-     * Maintenance Service.
-     *
      * @var MaintenanceModeService
      */
     protected $maintenance;
