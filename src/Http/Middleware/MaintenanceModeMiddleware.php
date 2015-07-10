@@ -1,4 +1,6 @@
-<?php namespace Rdehnhardt\MaintenanceMode\Http\Middleware;
+<?php
+
+namespace Rdehnhardt\MaintenanceMode\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Foundation\Application;

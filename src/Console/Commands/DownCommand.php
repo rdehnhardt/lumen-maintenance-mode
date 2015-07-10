@@ -1,4 +1,6 @@
-<?php namespace Rdehnhardt\MaintenanceMode\Console\Commands;
+<?php
+
+namespace Rdehnhardt\MaintenanceMode\Console\Commands;
 
 use Illuminate\Console\Command;
 use Rdehnhardt\MaintenanceMode\MaintenanceModeService;
