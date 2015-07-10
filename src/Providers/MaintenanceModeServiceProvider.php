@@ -3,8 +3,8 @@
 namespace Rdehnhardt\MaintenanceMode\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Rdehnhardt\MaintenanceMode\Console\Commands\UpCommand;
 use Rdehnhardt\MaintenanceMode\Console\Commands\DownCommand;
+use Rdehnhardt\MaintenanceMode\Console\Commands\UpCommand;
 use Rdehnhardt\MaintenanceMode\Http\Middleware\MaintenanceModeMiddleware;
 use Rdehnhardt\MaintenanceMode\MaintenanceModeService;
 

@@ -21,7 +21,8 @@
   "require-dev": {
     "laravel/lumen":"~5.0",
     "phpunit/phpunit": "~4.0",
-    "fzaninotto/faker": "v1.4.0"
+    "fzaninotto/faker": "v1.4.0",
+    "fabpot/php-cs-fixer": "~2.0"
   },
   "autoload": {
     "psr-4": {

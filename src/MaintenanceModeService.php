@@ -36,6 +36,26 @@ class MaintenanceModeService
     }
 
     /**
+     * Indicates if maintenance file exists.
+     *
+     * @return bool
+     */
+    public function maintenanceFileExists()
+    {
+        return file_exists($this->maintenanceFilePath());
+    }
+
+    /**
+     * Maintenance file path.
+     *
+     * @return string
+     */
+    public function maintenanceFilePath()
+    {
+        return $this->app->storagePath($this->maintenanceFile);
+    }
+
+    /**
      * Verify if application is up.
      *
      * @return bool
@@ -87,25 +107,5 @@ class MaintenanceModeService
         }
 
         return true;
-    }
-
-    /**
-     * Indicates if maintenance file exists.
-     *
-     * @return bool
-     */
-    public function maintenanceFileExists()
-    {
-        return file_exists($this->maintenanceFilePath());
-    }
-
-    /**
-     * Maintenance file path.
-     *
-     * @return string
-     */
-    public function maintenanceFilePath()
-    {
-        return $this->app->storagePath($this->maintenanceFile);
     }
 }
