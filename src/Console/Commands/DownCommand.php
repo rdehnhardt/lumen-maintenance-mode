@@ -7,7 +7,6 @@ use Rdehnhardt\MaintenanceMode\MaintenanceModeService;
 
 class DownCommand extends Command
 {
-
     /**
      * The console command name.
      *
@@ -20,7 +19,7 @@ class DownCommand extends Command
      *
      * @var string
      */
-    protected $description = "Put the application into maintenance mode.";
+    protected $description = 'Put the application into maintenance mode.';
 
     /**
      * Maintenance Service.
@@ -60,15 +59,7 @@ class DownCommand extends Command
      */
     public function setDownMode()
     {
-        if ($this->maintenance->setDownMode()) {
-            $this->info('Application is now in maintenance mode.');
-        } else {
-            $this->error(
-                sprintf(
-                    "Something went wrong on trying to create maintenance file %s.",
-                    $this->maintenance->maintenanceFilePath()
-                )
-            );
-        }
+        $this->maintenance->setDownMode();
+        $this->info('Application is now in maintenance mode.');
     }
 }

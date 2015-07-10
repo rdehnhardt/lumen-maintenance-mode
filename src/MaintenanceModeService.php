@@ -69,19 +69,43 @@ class MaintenanceModeService
      * Put the application in down mode.
      *
      * @return bool true if success and false if something fails.
+     * @throws Exceptions\FileException
      */
     public function setDownMode()
     {
-        return touch($this->maintenanceFilePath());
+        $file = $this->maintenanceFilePath();
+
+        if (!touch($file)) {
+            $message = sprintf(
+                'Something went wrong on trying to create maintenance file %s.',
+                $file
+            );
+
+            throw new Exceptions\FileException($message);
+        }
+
+        return true;
     }
 
     /**
      * Put application in up mode.
      *
      * @return bool true if success and false if something fails.
+     * @throws Exceptions\FileException
      */
     public function setUpMode()
     {
-        return unlink($this->maintenanceFilePath());
+        $file = $this->maintenanceFilePath();
+
+        if (file_exists($file) && !unlink($file)) {
+            $message = sprintf(
+                'Something went wrong on trying to remove maintenance file %s.',
+                $file
+            );
+
+            throw new Exceptions\FileException($message);
+        }
+
+        return true;
     }
 }

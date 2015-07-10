@@ -7,7 +7,6 @@ use Rdehnhardt\MaintenanceMode\MaintenanceModeService;
 
 class UpCommand extends Command
 {
-
     /**
      * The console command name.
      *
@@ -20,7 +19,7 @@ class UpCommand extends Command
      *
      * @var string
      */
-    protected $description = "Bring the application out of maintenance mode.";
+    protected $description = 'Bring the application out of maintenance mode.';
 
     /**
      * Maintenance Service.
@@ -60,15 +59,7 @@ class UpCommand extends Command
      */
     public function setUpMode()
     {
-        if ($this->maintenance->setUpMode()) {
-            $this->info('Application is now live.');
-        } else {
-            $this->error(
-                sprintf(
-                    "Something went wrong on trying to remove maintenance file %s.",
-                    $this->maintenance->maintenanceFilePath()
-                )
-            );
-        }
+        $this->maintenance->setUpMode();
+        $this->info('Application is now live.');
     }
 }

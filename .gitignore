@@ -1,5 +1,7 @@
 /bootstrap/compiled.php
 /vendor
+lumen.log
+.php_cs.cache
 .env.*.php
 .env.php
 .env
