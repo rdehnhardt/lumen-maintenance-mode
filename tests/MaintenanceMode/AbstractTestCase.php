@@ -10,7 +10,6 @@ use Laravel\Lumen\Testing\TestCase;
  */
 abstract class AbstractTestCase extends TestCase
 {
-
     /**
      * @return Application
      */

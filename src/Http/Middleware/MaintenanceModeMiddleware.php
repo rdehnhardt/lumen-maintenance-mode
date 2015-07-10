@@ -1,4 +1,6 @@
-<?php namespace Rdehnhardt\MaintenanceMode\Http\Middleware;
+<?php
+
+namespace Rdehnhardt\MaintenanceMode\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Foundation\Application;
@@ -49,10 +51,9 @@ class MaintenanceModeMiddleware
                 return new Response($this->view->make('errors.503'), 503);
             }
 
-            return $this->app->abort(503, "The application is down for maintenance.");
+            return $this->app->abort(503, 'The application is down for maintenance.');
         }
 
         return $next($request);
     }
-
 }

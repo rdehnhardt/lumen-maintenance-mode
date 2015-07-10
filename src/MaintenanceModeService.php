@@ -1,4 +1,6 @@
-<?php namespace Rdehnhardt\MaintenanceMode;
+<?php
+
+namespace Rdehnhardt\MaintenanceMode;
 
 use Illuminate\Contracts\Foundation\Application;
 

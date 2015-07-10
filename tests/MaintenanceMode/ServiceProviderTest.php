@@ -1,4 +1,6 @@
-<?php namespace Rdehnhardt\MaintenanceMode\Testing;
+<?php
+
+namespace Rdehnhardt\MaintenanceMode\Testing;
 
 use Rdehnhardt\MaintenanceMode\Console\Commands\DownCommand;
 use Rdehnhardt\MaintenanceMode\Console\Commands\UpCommand;
@@ -7,7 +9,6 @@ use Rdehnhardt\MaintenanceMode\Providers\MaintenanceModeServiceProvider;
 
 class ServiceProviderTest extends AbstractTestCase
 {
-
     public function setUp()
     {
         parent::setUp();

@@ -1,4 +1,6 @@
-<?php namespace Rdehnhardt\MaintenanceMode\Providers;
+<?php
+
+namespace Rdehnhardt\MaintenanceMode\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Rdehnhardt\MaintenanceMode\Console\Commands\UpCommand;
@@ -8,7 +10,6 @@ use Rdehnhardt\MaintenanceMode\MaintenanceModeService;
 
 class MaintenanceModeServiceProvider extends ServiceProvider
 {
-
     /**
      * Indicates if loading of the provider is deferred.
      *

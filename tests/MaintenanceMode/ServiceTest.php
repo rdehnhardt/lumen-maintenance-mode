@@ -1,11 +1,12 @@
-<?php namespace Rdehnhardt\MaintenanceMode\Testing;
+<?php
+
+namespace Rdehnhardt\MaintenanceMode\Testing;
 
 use Rdehnhardt\MaintenanceMode\MaintenanceModeService;
 use Rdehnhardt\MaintenanceMode\Providers\MaintenanceModeServiceProvider;
 
 class ServiceTest extends AbstractTestCase
 {
-
     /**
      * Asserting consecutive calls.
      */

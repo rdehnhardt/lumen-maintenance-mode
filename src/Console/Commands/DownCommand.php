@@ -1,11 +1,12 @@
-<?php namespace Rdehnhardt\MaintenanceMode\Console\Commands;
+<?php
+
+namespace Rdehnhardt\MaintenanceMode\Console\Commands;
 
 use Illuminate\Console\Command;
 use Rdehnhardt\MaintenanceMode\MaintenanceModeService;
 
 class DownCommand extends Command
 {
-
     /**
      * The console command name.
      *
@@ -18,7 +19,7 @@ class DownCommand extends Command
      *
      * @var string
      */
-    protected $description = "Put the application into maintenance mode.";
+    protected $description = 'Put the application into maintenance mode.';
 
     /**
      * Maintenance Service.
