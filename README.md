@@ -42,6 +42,8 @@ php artisan up
 
 ## IP released for access
 
+In .env file
+
 ```
 ALLOWED_IPS=999.99.9.999,999.99.9.999,999.99.9.999
 ```
