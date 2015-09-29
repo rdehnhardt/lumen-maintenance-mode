@@ -46,14 +46,26 @@ class MaintenanceModeMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if ($this->maintenance->isDownMode()) {
-            if ($this->view->exists('errors.503')) {
-                return new Response($this->view->make('errors.503'), 503);
-            }
+        if (!$this->maintenance->allowedIp()) {
+            if ($this->maintenance->isDownMode()) {
+                if ($this->view->exists('errors.503')) {
+                    return new Response($this->view->make('errors.503'), 503);
+                }
 
-            return $this->app->abort(503, 'The application is down for maintenance.');
+                return $this->app->abort(503, 'The application is down for maintenance.');
+            }
         }
 
         return $next($request);
     }
+
+    /**
+     * @return bool
+     */
+    private function checkAllowedIp()
+    {
+        $ips = explode(',', env('ALLOWED_IPS'));
+        return true;
+    }
+
 }
