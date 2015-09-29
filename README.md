@@ -39,3 +39,9 @@ php artisan down
 ```
 php artisan up
 ```
+
+## IP released for access
+
+```
+ALLOWED_IPS=999.99.9.999,999.99.9.999,999.99.9.999
+```
