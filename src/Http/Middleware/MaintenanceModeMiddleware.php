@@ -59,13 +59,4 @@ class MaintenanceModeMiddleware
         return $next($request);
     }
 
-    /**
-     * @return bool
-     */
-    private function checkAllowedIp()
-    {
-        $ips = explode(',', env('ALLOWED_IPS'));
-        return true;
-    }
-
 }
