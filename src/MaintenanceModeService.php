@@ -109,28 +109,4 @@ class MaintenanceModeService
         return true;
     }
 
-    /**
-     * Checks if this IP released for access.
-     *
-     * @return boll
-     */
-    public function allowedIp()
-    {
-        $ips = explode(',', env('ALLOWED_IPS'));
-
-        if (is_array($ips) && count($ips)) {
-            if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-                $ip = $_SERVER['HTTP_CLIENT_IP'];
-            } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-                $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-            } else {
-                $ip = $_SERVER['REMOTE_ADDR'];
-            }
-
-            return in_array($ip, $ips);
-        }
-
-        return true;
-    }
-
 }
