@@ -25,7 +25,7 @@ $app->register(
 ## Set View
 
 ```
-resources/errors/503.blade.php
+resources/views/errors/503.blade.php
 ```
 
 ## Put the application into maintenance mode.
