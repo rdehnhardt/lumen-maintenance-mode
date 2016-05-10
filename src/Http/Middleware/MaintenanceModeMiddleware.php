@@ -56,5 +56,4 @@ class MaintenanceModeMiddleware
 
         return $next($request);
     }
-
 }
