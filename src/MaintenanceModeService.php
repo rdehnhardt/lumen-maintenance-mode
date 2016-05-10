@@ -69,6 +69,7 @@ class MaintenanceModeService
      * Put the application in down mode.
      *
      * @throws Exceptions\FileException
+     *
      * @return bool true if success and false if something fails.
      */
     public function setDownMode()
@@ -91,6 +92,7 @@ class MaintenanceModeService
      * Put application in up mode.
      *
      * @throws Exceptions\FileException
+     *
      * @return bool true if success and false if something fails.
      */
     public function setUpMode()

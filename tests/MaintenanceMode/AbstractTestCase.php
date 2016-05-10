@@ -25,7 +25,7 @@ abstract class AbstractTestCase extends TestCase
      * Get path to stub.
      *
      * @param string $path
-     * 
+     *
      * @return string
      */
     protected function stubsPath($path = null)
