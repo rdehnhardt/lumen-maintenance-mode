@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__.'/../vendor/autoload.php';
 
-$lumenAppDir = __DIR__ . '/../vendor/laravel/lumen';
+$lumenAppDir = __DIR__.'/../vendor/laravel/lumen';
 
 /*
 |--------------------------------------------------------------------------
