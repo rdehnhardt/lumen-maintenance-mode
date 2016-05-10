@@ -5,17 +5,17 @@ namespace Rdehnhardt\MaintenanceMode\Console\Commands;
 class DownCommand extends Command
 {
     /**
-     * @inheritdoc
+     * @var string $name
      */
     protected $name = 'down';
 
     /**
-     * @inheritdoc
+     * @var string $description
      */
     protected $description = 'Put the application into maintenance mode.';
 
     /**
-     * @inheritdoc
+     * Put the application into maintenance mode.
      */
     public function fire()
     {

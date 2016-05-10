@@ -46,9 +46,7 @@ class ServiceTest extends AbstractTestCase
 
         $this->artisan('down');
 
-        $response = $this->call('GET', '/');
-
-        $this->assertEquals(503, $response->getStatusCode());
+        $this->assertFileExists($this->app->storagePath('framework/down'));
     }
 
     /**
@@ -60,9 +58,7 @@ class ServiceTest extends AbstractTestCase
 
         $this->artisan('up');
 
-        $response = $this->call('GET', '/');
-
-        $this->assertEquals(200, $response->getStatusCode());
+        $this->assertFileNotExists($this->app->storagePath('framework/down'));
     }
 
     /**

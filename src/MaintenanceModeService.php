@@ -2,7 +2,7 @@
 
 namespace Rdehnhardt\MaintenanceMode;
 
-use Illuminate\Contracts\Foundation\Application;
+use Laravel\Lumen\Application;
 
 class MaintenanceModeService
 {

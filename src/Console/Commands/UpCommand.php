@@ -5,17 +5,17 @@ namespace Rdehnhardt\MaintenanceMode\Console\Commands;
 class UpCommand extends Command
 {
     /**
-     * @inheritdoc
+     * @var string $name
      */
     protected $name = 'up';
 
     /**
-     * @inheritdoc
+     * @var string $description
      */
     protected $description = 'Bring the application out of maintenance mode.';
 
     /**
-     * @inheritdoc
+     * Bring the application out of maintenance mode.
      */
     public function fire()
     {

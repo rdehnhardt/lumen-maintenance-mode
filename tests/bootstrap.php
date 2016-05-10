@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__.'/../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
-$lumenAppDir = __DIR__.'/../vendor/laravel/lumen';
+$lumenAppDir = __DIR__ . '/../vendor/laravel/lumen';
 
 /*
 |--------------------------------------------------------------------------
@@ -15,14 +15,8 @@ $lumenAppDir = __DIR__.'/../vendor/laravel/lumen';
 |
 */
 
-$app = new Laravel\Lumen\Application(
-    realpath($lumenAppDir)
-);
-
-$app->useStoragePath(__DIR__.'/stubs/storage');
-
+$app = new Laravel\Lumen\Application(realpath($lumenAppDir));
 $app->withFacades();
-
 $app->withEloquent();
 
 /*
@@ -57,15 +51,13 @@ $app->singleton(
 |
 */
 
-$app->middleware([
-    Illuminate\Cookie\Middleware\EncryptCookies::class,
-    Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
-    Illuminate\Session\Middleware\StartSession::class,
-    Illuminate\View\Middleware\ShareErrorsFromSession::class,
-    Laravel\Lumen\Http\Middleware\VerifyCsrfToken::class,
-]);
+// $app->middleware([
+//    App\Http\Middleware\ExampleMiddleware::class
+// ]);
 
-$app->routeMiddleware([]);
+// $app->routeMiddleware([
+//     'auth' => App\Http\Middleware\Authenticate::class,
+// ]);
 
 /*
 |--------------------------------------------------------------------------
@@ -78,8 +70,9 @@ $app->routeMiddleware([]);
 |
 */
 
-$app->register(App\Providers\AppServiceProvider::class);
-$app->register(App\Providers\EventServiceProvider::class);
+// $app->register(App\Providers\AppServiceProvider::class);
+// $app->register(App\Providers\AuthServiceProvider::class);
+// $app->register(App\Providers\EventServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------
@@ -93,7 +86,7 @@ $app->register(App\Providers\EventServiceProvider::class);
 */
 
 $app->group(['namespace' => 'App\Http\Controllers'], function ($app) use ($lumenAppDir) {
-    require $lumenAppDir.'/app/Http/routes.php';
+    require $lumenAppDir . '/app/Http/routes.php';
 });
 
 return $app;
