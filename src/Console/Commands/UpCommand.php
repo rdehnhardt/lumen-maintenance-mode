@@ -5,12 +5,12 @@ namespace Rdehnhardt\MaintenanceMode\Console\Commands;
 class UpCommand extends Command
 {
     /**
-     * @var string $name
+     * @var string
      */
     protected $name = 'up';
 
     /**
-     * @var string $description
+     * @var string
      */
     protected $description = 'Bring the application out of maintenance mode.';
 
