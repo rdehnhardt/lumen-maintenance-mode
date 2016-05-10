@@ -41,9 +41,9 @@ class MaintenanceModeMiddleware
     /**
      * Handle incoming requests.
      *
-     * @param Request $request
+     * @param Request  $request
      * @param \Closure $next
-     * 
+     *
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function handle($request, Closure $next)
