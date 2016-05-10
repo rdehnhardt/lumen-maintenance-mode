@@ -5,12 +5,12 @@ namespace Rdehnhardt\MaintenanceMode\Console\Commands;
 class DownCommand extends Command
 {
     /**
-     * @var string $name
+     * @var string
      */
     protected $name = 'down';
 
     /**
-     * @var string $description
+     * @var string
      */
     protected $description = 'Put the application into maintenance mode.';
 

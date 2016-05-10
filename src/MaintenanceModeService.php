@@ -62,7 +62,7 @@ class MaintenanceModeService
      */
     public function isUpMode()
     {
-        return !$this->maintenanceFileExists();
+        return ! $this->maintenanceFileExists();
     }
 
     /**
@@ -75,7 +75,7 @@ class MaintenanceModeService
     {
         $file = $this->maintenanceFilePath();
 
-        if (!touch($file)) {
+        if (! touch($file)) {
             $message = sprintf(
                 'Something went wrong on trying to create maintenance file %s.',
                 $file
@@ -97,7 +97,7 @@ class MaintenanceModeService
     {
         $file = $this->maintenanceFilePath();
 
-        if (file_exists($file) && !unlink($file)) {
+        if (file_exists($file) && ! unlink($file)) {
             $message = sprintf(
                 'Something went wrong on trying to remove maintenance file %s.',
                 $file
@@ -108,5 +108,4 @@ class MaintenanceModeService
 
         return true;
     }
-
 }
