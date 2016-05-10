@@ -9,7 +9,7 @@ $finder = Symfony\Component\Finder\Finder::create()
     ->ignoreVCS(true);
 
 $fixers = [
-    '-psr0',
+    '-psr2',
     '-php_closing_tag',
     'blankline_after_open_tag',
     'concat_without_spaces',
