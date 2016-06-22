@@ -18,24 +18,12 @@ class MaintenanceModeMiddleware
     protected $maintenance;
 
     /**
-     * Lumen Application Instance.
-     *
-     * @var \Laravel\Lumen\Application
+     * MaintenanceModeMiddleware constructor.
+     * @param MaintenanceModeService $maintenance
      */
-    protected $app;
-
-    /**
-     * View Factory.
-     *
-     * @var \Illuminate\View\Factory
-     */
-    protected $view;
-
-    public function __construct(MaintenanceModeService $maintenance, Application $app)
+    public function __construct(MaintenanceModeService $maintenance)
     {
         $this->maintenance = $maintenance;
-        $this->app = $app;
-        $this->view = $app['view'];
     }
 
     /**
@@ -51,11 +39,11 @@ class MaintenanceModeMiddleware
     public function handle($request, Closure $next)
     {
         if ($this->maintenance->isDownMode() && !$this->maintenance->checkAllowedIp($this->getIp())) {
-            if ($this->view->exists('errors.503')) {
-                return new Response($this->view->make('errors.503'), 503);
+            if (app()['view']->exists('errors.503')) {
+                return new Response(app()['view']->make('errors.503'), 503);
             }
 
-            return $this->app->abort(503, 'The application is down for maintenance.');
+            return app()->abort(503, 'The application is down for maintenance.');
         }
 
         return $next($request);
