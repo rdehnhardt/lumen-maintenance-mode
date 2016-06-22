@@ -62,6 +62,17 @@ class ServiceTest extends AbstractTestCase
     }
 
     /**
+     * Test allowed ips
+     */
+    public function testAllowedIps()
+    {
+        $service = new MaintenanceModeService($this->app);
+
+        $this->assertTrue($service->checkAllowedIp('127.0.0.1'));
+        $this->assertTrue($service->checkAllowedIp('127.0.0.2'));
+    }
+
+    /**
      * @param MaintenanceModeService $service
      */
     public function assertSetUpMode(MaintenanceModeService $service)

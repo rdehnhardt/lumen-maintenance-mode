@@ -20,6 +20,10 @@ class MaintenanceModeService
      */
     protected $app;
 
+    /**
+     * MaintenanceModeService constructor.
+     * @param Application $app
+     */
     public function __construct(Application $app)
     {
         $this->app = $app;
@@ -109,5 +113,12 @@ class MaintenanceModeService
         }
 
         return true;
+    }
+
+    public function checkAllowedIp($ip)
+    {
+        $allowed = explode(',', env('ALLOWED_IPS'));
+
+        return in_array($ip, $allowed);
     }
 }

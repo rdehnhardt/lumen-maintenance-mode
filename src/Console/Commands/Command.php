@@ -35,6 +35,7 @@ abstract class Command extends IlluminateCommand
      * Set Application Up Mode.
      *
      * @return void
+     * @throws \Rdehnhardt\MaintenanceMode\Exceptions\FileException
      */
     public function setUpMode()
     {
@@ -46,6 +47,7 @@ abstract class Command extends IlluminateCommand
      * Set Application Down Mode.
      *
      * @return void
+     * @throws \Rdehnhardt\MaintenanceMode\Exceptions\FileException
      */
     public function setDownMode()
     {

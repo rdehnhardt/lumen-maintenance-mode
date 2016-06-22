@@ -41,14 +41,16 @@ class MaintenanceModeMiddleware
     /**
      * Handle incoming requests.
      *
-     * @param Request  $request
+     * @param Request $request
      * @param \Closure $next
      *
      * @return \Symfony\Component\HttpFoundation\Response
+     * @throws \Symfony\Component\HttpKernel\Exception\HttpException
+     * @throws \InvalidArgumentException
      */
     public function handle($request, Closure $next)
     {
-        if ($this->maintenance->isDownMode()) {
+        if ($this->maintenance->isDownMode() && !$this->maintenance->checkAllowedIp($this->getIp())) {
             if ($this->view->exists('errors.503')) {
                 return new Response($this->view->make('errors.503'), 503);
             }
@@ -57,5 +59,19 @@ class MaintenanceModeMiddleware
         }
 
         return $next($request);
+    }
+
+    /**
+     * Get client ip
+     */
+    private function getIp()
+    {
+        if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+            return $_SERVER['HTTP_CLIENT_IP'];
+        } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+            return $_SERVER['HTTP_X_FORWARDED_FOR'];
+        } else {
+            return $_SERVER['REMOTE_ADDR'];
+        }
     }
 }
