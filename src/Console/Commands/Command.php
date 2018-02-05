@@ -29,7 +29,7 @@ abstract class Command extends IlluminateCommand
      *
      * @return void
      */
-    abstract public function fire();
+    abstract public function handle();
 
     /**
      * Set Application Up Mode.
