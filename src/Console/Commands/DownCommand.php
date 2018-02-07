@@ -17,7 +17,7 @@ class DownCommand extends Command
     /**
      * Put the application into maintenance mode.
      */
-    public function fire()
+    public function handle()
     {
         if ($this->maintenance->isUpMode()) {
             $this->setDownMode();

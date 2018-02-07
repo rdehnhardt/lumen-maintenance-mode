@@ -17,7 +17,7 @@ class UpCommand extends Command
     /**
      * Bring the application out of maintenance mode.
      */
-    public function fire()
+    public function handle()
     {
         if ($this->maintenance->isDownMode()) {
             $this->setUpMode();
