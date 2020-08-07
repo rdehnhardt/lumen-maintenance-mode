@@ -42,7 +42,11 @@ class MaintenanceModeMiddleware
                 return new Response(app()['view']->make('errors.503'), 503);
             }
 
-            return app()->abort(503, 'The application is down for maintenance.');
+             if(config('maintenance')){
+                return response(config('maintenance')["response"], config('maintenance')["httpCode"]);
+            }else{
+                return app()->abort(503, 'The application is down for maintenance.');
+            }
         }
 
         return $next($request);
